@@ -39,27 +39,28 @@ public class Disk : MonoBehaviour {
 		if(col.gameObject.tag == "Target")
 		{
 			//this.transform.localScale = Vector3.zero;
-			this.gameObject.GetComponent<Renderer>().enabled = false;
-			//StartCoroutine(Shrink());
+			Debug.Log("OnCollisionEnter2D");
+			//this.gameObject.GetComponent<Renderer>().enabled = false;
+			StartCoroutine(Shrink());
 		}
 
 	}
 
-	public void ResetDisc()
-	{
-		this.gameObject.GetComponent<Renderer>().enabled = true;
-		//this.transform.localScale = Vector3.one;
-		//Debug.Log(InitialPosition);
-		//this.transform.Translate(new Vector3(5f,3f,1));
-	}
-
-	//IEnumerator Shrink()
+	//public void ResetDisc()
 	//{
-	//	for (int i = 0; i < 5; i++)
-	//	{
-	//		this.transform.localScale /= 10f;
-	//		yield return new WaitForSeconds(0.05f);
-	//	}
-	//	this.transform.localScale = Vector3.zero;
+	//	this.gameObject.GetComponent<Renderer>().enabled = true;
+	//	//this.transform.localScale = Vector3.one;
+	//	//Debug.Log(InitialPosition);
+	//	//this.transform.Translate(new Vector3(5f,3f,1));
 	//}
+
+	IEnumerator Shrink()
+	{
+		for (int i = 0; i < 5; i++)
+		{
+			this.transform.localScale /= 10f;
+			yield return new WaitForSeconds(0.05f);
+		}
+		this.transform.localScale = Vector3.zero;
+	}
 }

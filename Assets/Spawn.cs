@@ -38,11 +38,11 @@ public class Spawn : MonoBehaviour {
 		}
 	}
 
-	public IEnumerator ResetGame() {
-		yield return new WaitForSeconds(0.30f);//must be after we finish shrinking the disks - UGLY
-		foreach (var disk in Disks)
-		{
-			disk.ResetDisc();
-		}
-	}
+	//public IEnumerator ResetGame() {
+	//	yield return new WaitForSeconds(0.30f);//must be after we finish shrinking the disks - UGLY
+	//	foreach (var disk in Disks)
+	//	{
+	//		disk.ResetDisc();
+	//	}
+	//}
 }

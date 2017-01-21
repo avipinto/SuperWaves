@@ -17,8 +17,8 @@ public class Ripple : MonoBehaviour
 		//disk = GameObject.FindObjectOfType<Disk> ();
 		//Debug.Log(disks.Length);
 		MakeWaves();
-
-		StartCoroutine(DrawWave());
+		GameObject.Destroy(this.gameObject, 0.2f);
+		//StartCoroutine(DrawWave());
 	}
 
 	// Update is called once per frame

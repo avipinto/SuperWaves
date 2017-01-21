@@ -3,12 +3,11 @@ using System.Collections;
 
 public class Ripple : MonoBehaviour
 {
-
-	public Disk[] disks;
+	public Disk[] Disks { get; set; }
 
 	void Awake()
 	{
-		disks = FindObjectsOfType<Disk>();
+		Disks = FindObjectsOfType<Disk>();
 	}
 
 	// Use this for initialization
@@ -17,7 +16,6 @@ public class Ripple : MonoBehaviour
 		//disk = GameObject.FindObjectOfType<Disk> ();
 		//Debug.Log(disks.Length);
 		MakeWaves();
-		GameObject.Destroy(this.gameObject, 0.2f);
 		//StartCoroutine(DrawWave());
 	}
 
@@ -30,13 +28,14 @@ public class Ripple : MonoBehaviour
 
 	void MakeWaves()
 	{
-		foreach (var disk in disks)
+		foreach (var disk in Disks)
 		{
 			Vector2 v = (disk.transform.position - transform.position);
 			var directon = v.normalized;
 			var force = 100 / v.magnitude;
 			disk.Hit(directon * force);
 		}
+		GameObject.Destroy(this.gameObject, 0.2f);
 	}
 
 	IEnumerator DrawWave()

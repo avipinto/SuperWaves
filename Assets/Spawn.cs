@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Spawn : MonoBehaviour {
 
-	public GameObject Wave11;
+	public GameObject HitObject;
 
 	// Use this for initialization
 	void Start () {
@@ -14,7 +14,7 @@ public class Spawn : MonoBehaviour {
 	void Update () {
 		if (Input.GetMouseButtonDown (0)) {
 			//Debug.Log (Input.mousePosition);
-			var wave = Instantiate (Wave11);
+			var wave = Instantiate (HitObject);
 			wave.transform.position = Camera.main.ScreenToWorldPoint (Input.mousePosition) + new Vector3(0,0,10);
 			wave.transform.localScale = Vector3.one;
 		}

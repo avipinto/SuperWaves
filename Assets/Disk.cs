@@ -35,8 +35,9 @@ public class Disk : MonoBehaviour {
 
 	public void OnCollisionEnter2D(Collision2D col)
 	{
+		//Debug.Log("OnCollisionEnter2D");
 		//x.gameObject.tag == "Wall"
-		if(col.gameObject.tag == "Target")
+		if (col.gameObject.tag == "Target")
 		{
 			//this.transform.localScale = Vector3.zero;
 			Debug.Log("OnCollisionEnter2D");

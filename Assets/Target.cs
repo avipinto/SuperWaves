@@ -22,6 +22,7 @@ public class Target : MonoBehaviour {
 
 	public void OnCollisionEnter2D(Collision2D col)
 	{
+		//Debug.Log("Target OnCollisionEnter2D");
 		//x.gameObject.tag == "Wall"
 		Spawn.onDiskHitTarget();
 		
